@@ -1,13 +1,15 @@
-var plusMoins = {}
+var plusMoins = {};
 
 plusMoins.begin = function(user){
+	console.log("poulet");
 	user.preferences.number = Math.floor(Math.random()*1000);
 	user.preferences.game = 'plusMoins';
 	facebook.sendQuickMessage("Ok j'ai choisi un nombre! A toi de jouer", user.id);
-}
+};
 
 plusMoins.parse = function(message,user){
 	var i = parseInt(message);
+	console.log(i);
 	if(isNaN(i))
 		return "Il faut rentrer un chiffre!!";
 	if(i < user.preferences.number)
@@ -16,6 +18,6 @@ plusMoins.parse = function(message,user){
 		return "Trop grand!";
 	else 
 		return "Bien ouej.";
-}
+};
 
 module.exports = plusMoins;
