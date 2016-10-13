@@ -1,0 +1,42 @@
+DB read error { Error: ENOENT: no such file or directory, open './database.json'
+    at Error (native)
+    at Object.fs.openSync (fs.js:634:18)
+    at Object.fs.readFileSync (fs.js:502:33)
+    at Object.db.load (/home/tyra/bots/gamebotcolor/bottomatik/db/db.js:15:28)
+    at Object.<anonymous> (/home/tyra/bots/gamebotcolor/app.js:45:8)
+    at Module._compile (module.js:541:32)
+    at Object.Module._extensions..js (module.js:550:10)
+    at Module.load (module.js:458:32)
+    at tryModuleLoad (module.js:417:12)
+    at Function.Module._load (module.js:409:3)
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: './database.json' }
+Fatal Error: ReferenceError: parse is not defined
+    at Handlers.on (/home/tyra/bots/gamebotcolor/app.js:4:16)
+    at execute_handles (/home/tyra/bots/gamebotcolor/bottomatik/handlers/handlers.js:34:3)
+    at Object._handle [as handle] (/home/tyra/bots/gamebotcolor/bottomatik/handlers/handlers.js:53:3)
+    at goodToGo (/home/tyra/bots/gamebotcolor/bottomatik/routes/messaging.js:81:13)
+    at /home/tyra/bots/gamebotcolor/bottomatik/routes/messaging.js:44:10
+    at Layer.handle [as handle_request] (/home/tyra/bots/gamebotcolor/bottomatik/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tyra/bots/gamebotcolor/bottomatik/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/home/tyra/bots/gamebotcolor/bottomatik/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/tyra/bots/gamebotcolor/bottomatik/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tyra/bots/gamebotcolor/bottomatik/node_modules/express/lib/router/index.js:277:22
+{"object":"page","entry":[{"id":"1329795593699444","time":1476359700616,"messaging":[{"sender":{"id":"1216686671738333"},"recipient":{"id":"1329795593699444"},"timestamp":1476359700595,"message":{"mid":"mid.1476359700595:8bfb4b7912","seq":9,"text":"test"}}]}]}
+/home/tyra/bots/gamebotcolor/app.js:33
+plusMoins.begin = function(user){
+                ^
+
+TypeError: Cannot set property 'begin' of undefined
+    at Object.<anonymous> (/home/tyra/bots/gamebotcolor/app.js:33:17)
+    at Module._compile (module.js:541:32)
+    at Object.Module._extensions..js (module.js:550:10)
+    at Module.load (module.js:458:32)
+    at tryModuleLoad (module.js:417:12)
+    at Function.Module._load (module.js:409:3)
+    at Module.runMain (module.js:575:10)
+    at run (node.js:348:7)
+    at startup (node.js:140:9)
+    at node.js:463:3

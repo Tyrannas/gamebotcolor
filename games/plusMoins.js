@@ -1,7 +1,6 @@
 var plusMoins = {};
 
 plusMoins.begin = function(user){
-	console.log("poulet");
 	user.preferences.number = Math.floor(Math.random()*1000);
 	user.preferences.game = 'plusMoins';
 	facebook.sendQuickMessage("Ok j'ai choisi un nombre! A toi de jouer", user.id);

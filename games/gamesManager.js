@@ -10,6 +10,7 @@ game.begin = function(user, type){
 };
 
 game.parse = function(message, user, type){
+	console.log(type);
 	switch(type){
 		case 'plusMoins':
 			return plusMoins.parse(message,user);

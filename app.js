@@ -4,7 +4,8 @@ var game = require("./games/gamesManager");
 Handlers.on('text', (message,user,session) => {
 	if(user.preferences.game === undefined)
 		facebook.sendQuickMessage("Il faut choisir un jeu!", user.id);
-	var reponse = game.parse(message,user);
+	console.log("on va parse");
+	var reponse = game.parse(message,user,user.preferences.game);
 	facebook.sendQuickMessage(reponse, user.id);
 });
 
