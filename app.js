@@ -14,6 +14,7 @@ Handlers.on('postback', (attachment, user,session) => {
 			game.begin(user,'plusMoins');
 		case 'getStarted':
 			facebook.sendQuickMessage("Bienvenue! Une petite envie de jouer? Tu peux choisir ton jeu avec le menu ci-dessous", user.id);
+		break;
 	}
 });
 

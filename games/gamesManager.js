@@ -7,6 +7,7 @@ game.begin = function(user, type){
 	switch(type){
 		case 'plusMoins':
 			plusMoins.begin(user);
+		break;
 	}
 };
 
@@ -14,6 +15,7 @@ game.parse = function(message, user, type){
 	switch(type){
 		case 'plusMoins':
 			return plusMoins.parse(message,user);
+		break;
 	}
 };
 
