@@ -23,8 +23,16 @@ game.begin = function(user, type){
 	}
 }
 
-game.begin = function(user){
+game.parse = function(message, user, type){
+	switch(type){
+		case 'plusMoins':
+			plusMoins.parse(message,user);
+	}
+}
+
+plusMoins.begin = function(user){
 	user.preferences.number = Math.floor(Math.random()*1000);
+	user.preferences.game = 'plusMoins';
 	facebook.sendQuickMessage("Ok j'ai choisi un nombre! A toi de jouer", user.id);
 }
 
