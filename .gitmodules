@@ -1,0 +1,3 @@
+[submodule "bottomatik"]
+	path = bottomatik
+	url = https://github.com/jsmrcaga/bottomatik.git
