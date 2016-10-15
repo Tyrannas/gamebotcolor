@@ -1,4 +1,4 @@
-var bot = require("./bottomatik/app.js");
+global.bot = require("./bottomatik/app.js");
 var game = require("./games/gamesManager");
 
 Handlers.on('text', (message,user,session) => {
