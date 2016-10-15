@@ -1,7 +1,7 @@
 var plusMoins = {};
 
 plusMoins.begin = function(user){
-	user.preferences.number = Math.floor(Math.random()*1000);
+	user.preferences.plusMoins.number = Math.floor(Math.random()*1000);
 	user.preferences.game = 'plusMoins';
 	facebook.sendQuickMessage("Ok j'ai choisi un nombre entre 1 et 1000! A toi de jouer", user.id);
 };
@@ -10,12 +10,22 @@ plusMoins.parse = function(message,user){
 	var i = parseInt(message);
 	if(isNaN(i))
 		return "Il faut rentrer un chiffre!!";
-	if(i < user.preferences.number)
+	if(i < user.preferences.plusMoins.number){
+		user.preferences.count++;
 		return "Trop petit!";
-	else if(i > user.preferences.number)
+	}
+	else if(i > user.preferences.plusMoins.number){
+		user.preferences.count++;
 		return "Trop grand!";
-	else 
-		return "Bien ouej. Tu peux utiliser le menu pour rejouer ou changer de jeu!";
+	}
+	else {
+		if(user.preferences.plusMoins.highScore <= user.preferences.plusMoins.count)
+			return "Bien joué. Tu as trouvé en " + user.preferences.plusMoins.count + "coups! Ton reccord est à " + user.preferences.plusMoins.highScore + ".Tu peux utiliser le menu pour rejouer ou changer de jeu!";
+		else{
+			user.preferences.plusMoins.highScore = user.preferences.plusMoins.count;
+			return "Bien joué. Tu as trouvé en " + user.preferences.plusMoins.count + "!C'est un nouveau record!";
+		}
+	}
 };
 
 module.exports = plusMoins;

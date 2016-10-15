@@ -8,6 +8,9 @@ game.begin = function(user, type){
 		case 'plusMoins':
 			plusMoins.begin(user);
 		break;
+		case 'enigme':
+			enigme.begin(user);
+		break;
 	}
 };
 
